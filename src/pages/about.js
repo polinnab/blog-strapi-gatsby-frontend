@@ -10,7 +10,6 @@ const AboutPage = () => {
     query {
       strapiAbout {
         title
-        description
         blocks {
           ...Blocks
         }
@@ -24,12 +23,10 @@ const AboutPage = () => {
     metaDescription: title,
   }
 
-  // const description = 'H'
-
   return (
     <Layout>
       <Seo seo={seo} />
-      <Headings title={strapiAbout.title} description={strapiAbout.description}/>
+      <Headings title={strapiAbout.title}/>
       <BlocksRenderer blocks={blocks} />
     </Layout>
   )
